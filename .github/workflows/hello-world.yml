@@ -8,7 +8,7 @@ on:
     runs-on: ubuntu-latest
     steos:
       name: checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout
 
       name: Print Hello
       run: echo "Hello Github actions"      
