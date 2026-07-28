@@ -1,14 +1,21 @@
-name : hello world demo
-on:
-   push:
-      branches: 
-          main
-  jobs:
-  say hello:
-    runs-on: ubuntu-latest
-    steos:
-      name: checkout code
-      uses: actions/checkout
+name: Hello World Workflow
 
-      name: Print Hello
-      run: echo "Hello Github actions"      
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print Hello World
+        run: echo "Hello, World!"
+
+      - name: Print Current Date
+        run: date
